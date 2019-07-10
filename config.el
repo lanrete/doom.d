@@ -105,5 +105,8 @@
 ;; org archive
 (setq org-archive-location "~/org/archived.org::datetree/")
 
+;; org bullet
+(setq org-bullets-bullet-list '("☰" "☲" "☵" "☷"))
+
 ;; doom-modeline
 (setq doom-modeline-major-mode-icon t)
