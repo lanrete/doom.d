@@ -52,6 +52,8 @@
 (setq org-stuck-projects '("+Project/-DONE-CANCELED" ("TODO") nil ""))
 
 ;; org agenda view
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-deadline-if-done t)
 (setq org-agenda-hide-tags-regexp "FDL\\|Project\\|Life")
 (setq org-agenda-compact-blocks t)
 (setq org-agenda-start-day "0d")
@@ -110,3 +112,10 @@
 
 ;; doom-modeline
 (setq doom-modeline-major-mode-icon t)
+
+;; popup
+(after! popup
+  (set-popup-rules!
+    '(("Agenda" :ignore t)
+      ("Ledger" :ignore t)))
+  )
