@@ -80,7 +80,7 @@
           (todo "TODO"
                 ((org-agenda-overriding-header "Unscheduled tasks")
                   (org-agenda-skip-function
-                  '(org-agenda-skip-entry-if 'scheduled))
+                  '(org-agenda-skip-entry-if 'scheduled 'deadline))
                   ))
           (tags "Project/-DONE"
                 ((org-agenda-overriding-header "All active projects")
