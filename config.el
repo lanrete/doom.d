@@ -119,3 +119,7 @@
     '(("Agenda" :ignore t)
       ("Ledger" :ignore t)))
   )
+
+;; org export
+(after! org
+  (add-to-list 'org-export-backends 'latex))
