@@ -36,7 +36,7 @@
         ("n" "note" entry (file "~/org/refile.org")
               "* %? :NOTE:\n%U\n%a\n\n" :clock-in t :clock-resume t)
         ("m" "MEETING" entry (file+datetree "~/org/refile.org")
-          "* MEETING with :MEETING:\n\n** Agenda\n %? \n** FOLLOW\n\n" :clock-in t :clock-resume t)
+          "* MEETING with %? :MEETING:\n\n** Agenda\n \n** FOLLOW\n\n" :clock-in t :clock-resume t)
         ("d" "Date" entry (file+datetree "~/org/date.org")
          "* Date at %u  :DATE:\n\n%?" :clock-in nil :clock-resume t)
         ))
