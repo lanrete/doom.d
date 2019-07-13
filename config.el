@@ -89,7 +89,7 @@
                 ((org-agenda-overriding-header "Tasks to refile")
                   (org-tags-match-list-sublevels nil)))
           )
-          ((org-agenda-tag-filter-preset '("-LIFE")))
+          ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE")))
         )
         ("l" "Life agenda"
           (
