@@ -15,6 +15,13 @@
 (add-hook 'text-mode-hook #'display-line-numbers-mode)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
+;; Fix ledger mode completion after ledger mode update
+(add-hook 'ledger-mode-hook
+          (lambda ()
+            (setq-local tab-always-indent 'complete)
+            (setq-local completion-ignore-case t)
+            (setq-local ledger-complete-in-steps t)))
+
 ;; ledger mode
 (setq ledger-post-amount-alignment-column 68)
 
