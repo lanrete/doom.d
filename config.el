@@ -123,3 +123,8 @@
 ;; org export
 (after! org
   (add-to-list 'org-export-backends 'latex))
+
+;; font setup
+(setq doom-font (font-spec :family "Fira Code" :size 18))
+(setq doom-themes-enable-bold nil)
+(set-face-bold-p 'bold nil)
