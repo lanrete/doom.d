@@ -44,12 +44,15 @@
               "* %? :NOTE:\n%U\n%a\n\n" :clock-in t :clock-resume t)
         ("m" "MEETING" entry (file+datetree "~/org/refile.org")
           "* MEETING with %? :MEETING:\n\n** Agenda\n \n** FOLLOW\n\n" :clock-in t :clock-resume t)
+        ("s" "Schedule" entry (file+datetree "~/org/refile.org")
+          "* SCHE with %? :MEETING:\n SCHEDULED: %^T \n** Agenda\n \n** TBD\n\n" :clock-resume t)
         ("d" "Date" entry (file+datetree "~/org/date.org")
          "* Date at %u  :DATE:\n\n%?" :clock-in nil :clock-resume t)
         ))
 
 ;; org todo settings
-(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "PENDING(p)" "|" "CANCELED(c)" "DONE(d)" "MEETING")
+(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "PENDING(p)" "|" "CANCELED(c)" "DONE(d)")
+                          (sequence "SCHE" "|" "MEETING")
                           (sequence "SOMEDAY(o)" "|" "FINALLY(f)")
                           (sequence "FOLLOW" "|" "FOLLOWED")
                           ))
