@@ -77,7 +77,7 @@
           (
           (agenda ""
                   ((org-agenda-skip-function
-                    '(org-agenda-skip-entry-if 'todo '("PENDING")))
+                    '(org-agenda-skip-entry-if 'todo '("PENDING" "NEXT")))
                     (org-agenda-span 1)
                     (org-agenda-use-time-grid nil)
                     ))
