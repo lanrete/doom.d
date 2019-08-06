@@ -99,7 +99,35 @@
                 ((org-agenda-overriding-header "Tasks to refile")
                   (org-tags-match-list-sublevels nil)))
           )
-          ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE")))
+          ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE" "-RPA")))
+        )
+        ("r" "RPA"
+          (
+          (agenda ""
+                  ((org-agenda-skip-function
+                    '(org-agenda-skip-entry-if 'todo '("PENDING" "NEXT")))
+                    (org-agenda-span 1)
+                    (org-agenda-use-time-grid nil)
+                    ))
+          (todo "PENDING"
+                ((org-agenda-overriding-header "Pending tasks")))
+          (todo "FOLLOW"
+                ((org-agenda-overriding-header "Meeting follow up")))
+          (stuck ""
+                 ((org-agenda-overriding-header "Stuck projects")))
+          (todo "TODO"
+                ((org-agenda-overriding-header "Unscheduled tasks")
+                  (org-agenda-skip-function
+                  '(org-agenda-skip-entry-if 'scheduled 'deadline))
+                  ))
+          (tags "Project/-DONE"
+                ((org-agenda-overriding-header "All active projects")
+                  (org-agenda-sorting-strategy '(priority-down))))
+          (tags-todo "REFILE"
+                ((org-agenda-overriding-header "Tasks to refile")
+                  (org-tags-match-list-sublevels nil)))
+          )
+          ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE" "-FDL")))
         )
         ("l" "Life agenda"
           (
