@@ -2,6 +2,8 @@
 
 ;; Place your private configuration here
 
+(setq system-time-locale "C")
+
 ;;; code:
 ;; Prefer horizontal split first
 (setq split-width-threshold 0)
@@ -92,7 +94,7 @@
                   (org-agenda-skip-function
                   '(org-agenda-skip-entry-if 'scheduled 'deadline))
                   ))
-          (tags "Project/-DONE"
+          (tags "Project/-DONE-CANCELED"
                 ((org-agenda-overriding-header "All active projects")
                   (org-agenda-sorting-strategy '(priority-down))))
           (tags-todo "REFILE"
