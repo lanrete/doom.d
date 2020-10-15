@@ -10,7 +10,7 @@
 (setq split-height-threshold nil)
 
 ;; relative line number
-(setq-default display-line-numbers-type 'visual
+(setq-default display-line-numbers-type 'relative
               display-line-numbers-current-absolute t
               display-line-numbers-width 4
               display-line-numbers-widen t)
@@ -22,7 +22,9 @@
           (lambda ()
             (setq-local tab-always-indent 'complete)
             (setq-local completion-ignore-case t)
-            (setq-local ledger-complete-in-steps t)))
+            (setq-local ledger-complete-in-steps t)
+            (setq-local ledger-accounts-file "~/personalFinance/accounts.dat")
+            ))
 
 ;; ledger mode
 (setq ledger-post-amount-alignment-column 68)
@@ -148,7 +150,9 @@
 (setq org-archive-location "~/org/archived.org::datetree/")
 
 ;; org bullet
-(setq org-bullets-bullet-list '("☰" "☲" "☵" "☷"))
+;;(setq org-bullets-bullet-list '("☰" "☲" "☵" "☷"))
+;; Updated with org-superstar
+(setq org-superstar-headline-bullets-list '("☰" "☲" "☵" "☷"))
 
 ;; doom-modeline
 (setq doom-modeline-major-mode-icon t)
@@ -165,6 +169,12 @@
   (add-to-list 'org-export-backends 'latex))
 
 ;; font setup
-(setq doom-font (font-spec :family "Fira Code" :size 18))
+(setq doom-font (font-spec :family "PragmataPro Mono" :size 22))
 (setq doom-themes-enable-bold nil)
+(setq doom-theme 'doom-nord)
 (set-face-bold-p 'bold nil)
+
+;; proxy setup
+(setq url-proxy-services
+      '(("http"  . "http://127.0.0.1:8888")
+        ("https" . "http://127.0.0.1:8888")))
