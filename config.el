@@ -68,10 +68,10 @@
 ;; org agenda view
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-skip-deadline-if-done t)
-(setq org-agenda-hide-tags-regexp "FDL\\|Project\\|Life")
+(setq org-agenda-hide-tags-regexp "FDL\\|Project\\|Life\\|GE\\|Adidas")
 (setq org-agenda-compact-blocks t)
 (setq org-agenda-start-day "0d")
-(setq org-agenda-files (quote ("~/org")))
+(setq org-agenda-files (quote ("~/org/GE""~/org/Adidas")))
 (setq org-tags-exclude-from-inheritance '("Project"))
 (setq org-tags-column 60)
 
