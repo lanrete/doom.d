@@ -10,7 +10,7 @@
 (setq split-height-threshold nil)
 
 ;; relative line number
-(setq-default display-line-numbers-type 'relative
+(setq-default display-line-numbers-type 'visual
               display-line-numbers-current-absolute t
               display-line-numbers-width 4
               display-line-numbers-widen t)
@@ -55,7 +55,7 @@
         ))
 
 ;; org todo settings
-(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "PENDING(p)" "|" "CANCELED(c)" "DONE(d)")
+(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WORK(k)" "PENDING(p)" "|" "CANCELED(c)" "DONE(d)")
                           (sequence "SCHE" "|" "MEETING")
                           (sequence "SOMEDAY(o)" "|" "FINALLY(f)")
                           (sequence "FOLLOW" "|" "FOLLOWED")
@@ -63,7 +63,7 @@
 (setq org-log-done 'time)
 
 ;; org project
-(setq org-stuck-projects '("+Project/-DONE-CANCELED" ("TODO") nil ""))
+(setq org-stuck-projects '("+Project/-DONE-CANCELED" ("TODO" "WORK") nil ""))
 
 ;; org agenda view
 (setq org-agenda-skip-scheduled-if-done t)
@@ -71,7 +71,7 @@
 (setq org-agenda-hide-tags-regexp "FDL\\|Project\\|Life\\|GE\\|Adidas")
 (setq org-agenda-compact-blocks t)
 (setq org-agenda-start-day "0d")
-(setq org-agenda-files (quote ("~/org/GE""~/org/Adidas")))
+(setq org-agenda-files (quote ("~/org/Adidas""~/org")))
 (setq org-tags-exclude-from-inheritance '("Project"))
 (setq org-tags-column 60)
 
@@ -104,34 +104,6 @@
                   (org-tags-match-list-sublevels nil)))
           )
           ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE" "-RPA")))
-        )
-        ("r" "RPA"
-          (
-          (agenda ""
-                  ((org-agenda-skip-function
-                    '(org-agenda-skip-entry-if 'todo '("PENDING" "NEXT")))
-                    (org-agenda-span 1)
-                    (org-agenda-use-time-grid nil)
-                    ))
-          (todo "PENDING"
-                ((org-agenda-overriding-header "Pending tasks")))
-          (todo "FOLLOW"
-                ((org-agenda-overriding-header "Meeting follow up")))
-          (stuck ""
-                 ((org-agenda-overriding-header "Stuck projects")))
-          (todo "TODO"
-                ((org-agenda-overriding-header "Unscheduled tasks")
-                  (org-agenda-skip-function
-                  '(org-agenda-skip-entry-if 'scheduled 'deadline))
-                  ))
-          (tags "Project/-DONE"
-                ((org-agenda-overriding-header "All active projects")
-                  (org-agenda-sorting-strategy '(priority-down))))
-          (tags-todo "REFILE"
-                ((org-agenda-overriding-header "Tasks to refile")
-                  (org-tags-match-list-sublevels nil)))
-          )
-          ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE" "-FDL")))
         )
         ("l" "Life agenda"
           (
