@@ -55,7 +55,7 @@
         ))
 
 ;; org todo settings
-(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WORK(k)" "PENDING(p)" "|" "CANCELED(c)" "DONE(d)")
+(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WORK(k)" "PENDING(p)" "LATER(l)" "|" "CANCELED(c)" "DONE(d)")
                           (sequence "SCHE" "|" "MEETING")
                           (sequence "SOMEDAY(o)" "|" "FINALLY(f)")
                           (sequence "FOLLOW" "|" "FOLLOWED")
@@ -63,7 +63,7 @@
 (setq org-log-done 'time)
 
 ;; org project
-(setq org-stuck-projects '("+Project/-DONE-CANCELED" ("TODO" "WORK") nil ""))
+(setq org-stuck-projects '("+Project/-DONE-CANCELED" ("TODO" "WORK" "LATER") nil ""))
 
 ;; org agenda view
 (setq org-agenda-skip-scheduled-if-done t)
@@ -102,6 +102,8 @@
           (tags-todo "REFILE"
                 ((org-agenda-overriding-header "Tasks to refile")
                   (org-tags-match-list-sublevels nil)))
+          (todo "LATER"
+                ((org-agenda-overriding-header "Lowest priority")))
           )
           ((org-agenda-tag-filter-preset '("-LIFE" "-ARCHIVE" "-RPA")))
         )
@@ -124,7 +126,8 @@
 ;; org bullet
 ;;(setq org-bullets-bullet-list '("☰" "☲" "☵" "☷"))
 ;; Updated with org-superstar
-(setq org-superstar-headline-bullets-list '("☰" "☲" "☵" "☷"))
+;; (setq org-superstar-headline-bullets-list '("☰" "☲" "☵" "☷"))
+(setq org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅"))
 
 ;; doom-modeline
 (setq doom-modeline-major-mode-icon t)
@@ -143,7 +146,7 @@
 ;; font setup
 (setq doom-font (font-spec :family "PragmataPro Mono" :size 22))
 (setq doom-themes-enable-bold nil)
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord-light)
 (set-face-bold-p 'bold nil)
 
 ;; proxy setup
